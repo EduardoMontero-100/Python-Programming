@@ -1,0 +1,17 @@
+Upper Camel Case ==> Pascal Case 
+La primera letra de cada palabra en mayúsculas, e.g. House, BankAccount.
+
+Definir clases en python2:
+class <className>(object):
+
+Definir clases en python3:
+class <className>:
+
+Ejemplos de clases:
+
+Small Bank:
+Bankcashier, Client, Transaction 
+Donut Shop:
+Manager,Client, Product
+Videogame Store:
+Videogame, Client, Manager
