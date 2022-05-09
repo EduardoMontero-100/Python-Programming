@@ -15,3 +15,10 @@ Donut Shop:
 Manager,Client, Product
 Videogame Store:
 Videogame, Client, Manager
+
+
+Ventajas de POO:
+- Modularidad (crear modulos/objetos separados)
+- Reusabilidad (los objetos se pueden reusar)
+- Extensabilidad (añadir más funcionalidad )
+
