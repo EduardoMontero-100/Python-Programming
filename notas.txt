@@ -16,9 +16,37 @@ Manager,Client, Product
 Videogame Store:
 Videogame, Client, Manager
 
+En las clases se define estados y comportamiento
 
 Ventajas de POO:
 - Modularidad (crear modulos/objetos separados)
 - Reusabilidad (los objetos se pueden reusar)
 - Extensabilidad (añadir más funcionalidad )
+
+Clase: (es reusable)
+Es un plano (blueprint) que se usa para crear objetos:
+Definimos el state / behavior of an object.
+Hay que diseñar la clase. 
+Hay que definir los atributos y el comportamiento de la clase.
+
+Upper Camel Case  ==> Pascal Case:
+BankAccount.
+
+-------------------
+Problem Statement
+-------------------
+Se buscan clases potenciales en los sustantivos
+
+Classes act like blueprints to create instances
+
+Create instances/object base on classes:
+Instance: Is an object created from the class.
+Class es un molde
+Instance es un objeto creado en base a la clase. Puede tener diferentes atributos:
+color, size, weight, ...
+Instances atributes are independents
+
+
+
+
 
