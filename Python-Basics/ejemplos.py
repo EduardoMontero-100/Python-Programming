@@ -337,3 +337,111 @@ matriz[2].append(sum(matriz[2]))
 matriz[3].append(sum(matriz[3]))
 
 matriz
+
+numero = int(input('Ingrese numero\n'))
+
+if numero%2==0:
+    print('El numero ingresado es par')
+    if numero>20:
+        print('El numero es mayor a 20')
+else:
+    print('El numero ingresado es impar')
+
+## Ciclos:
+
+
+num =5 
+while(num>0):
+    print(num)
+    num-=1
+print('Termino el proceso')
+
+
+
+entrada = input('ingrese salir').lower()
+while(entrada!='salir'):
+    if entrada !=1:
+        break
+    entrada = input('ingrese salir').lower()
+    print('Tiene que ingresar salir')
+
+
+print('Saliste del bucle')
+
+lista1 =[1,2,3]
+lista2 = lista1
+lista1.append(4)
+print(lista1)
+print(lista2)
+# para elementos complejos pasa eso. 
+# esto es pasaje por referencia
+
+matriz=[
+[1,5,1],
+[2,1,2],
+[3,0,1],
+[1,4,4]
+]
+
+for lista in matriz:
+    lista.append(sum(lista))
+    print(lista)
+
+print(matriz)
+
+
+lista = [5,6,7,8,9,10]
+for indice, valor in enumerate(lista):
+    print(f'El indice es: {indice} y el elemento es: {valor}')
+
+
+
+lista = [5,6,7,8,9,10]
+print(lista)
+for indice, valor in enumerate(lista):
+    lista[indice]=valor+5
+
+print(lista)
+
+
+nombre ='Eduardo Montero'
+for letra in nombre:
+    print(f'----->Imprimo letra {letra}')
+
+
+for numero in range(0,100,1):
+    print(numero)
+
+print(list(range(0,10)))
+
+lista = list(range(0,10))
+print(lista)
+
+for n in range(20, 2, -2):
+    print(f'Numero: {n}')
+    input('OK?')
+
+lista_notas =[2,3,4,2,3,9,8,6]
+
+lista_aprobadas=[]
+for nota in lista_notas:
+    if nota>=6:
+        lista_aprobadas.append(nota)
+print(lista_aprobadas)
+
+
+
+pares=[]
+impares=[]
+
+numero =5
+while numero!=0:
+    numero = input('Ingrese numero: \n')
+    if numero%2==0:
+        pares.append(numero)
+    else:
+        impares.append(numero)
+if sum(pares) > sum(impares):
+    print('Lista de pares es mayor a la de impares')
+else:
+    print('Lista de impares es mayor a la de pares')

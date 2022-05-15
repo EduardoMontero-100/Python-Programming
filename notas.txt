@@ -45,8 +45,33 @@ Class es un molde
 Instance es un objeto creado en base a la clase. Puede tener diferentes atributos:
 color, size, weight, ...
 Instances atributes are independents
+Class Naming Convention: Pascal Case ==> Upper Camel Case (e.g. HouseKeeper)
+
+Class definition: Is the implementation of the class in an specific language
+    Class Header:
+    class <ClassName>:
 
 
+Body of the class: Contains the elements of the blueprints, including 
+the attributes and behavior of the class: Elements:
+    Class attributes
+    __init__() : special method used to define initial state of an object
+               : called automatically when the instance is created.
+    Methods
 
+Instances and Instances atributes.
+Instances is an object created by the class.
+Instances have attributes and this attributes are called instances atributes.
+Player:
+    sprite
+    score
+    number of lives
+Instance attributes are independents
+snake_case format (back_account)
+
+def __init__(self): #permite definir los atributos de la instancia
+self: is a generic way of referring to the current instance of the class that is been creating
+
+TODO: Lección número 30
 
 
