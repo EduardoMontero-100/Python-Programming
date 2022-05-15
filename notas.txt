@@ -72,6 +72,20 @@ snake_case format (back_account)
 def __init__(self): #permite definir los atributos de la instancia
 self: is a generic way of referring to the current instance of the class that is been creating
 
-TODO: Lección número 30
+Access an instance attributes
+Access instance attributes inside the class:
+self.<attributes>
+
+__init__() permite definir los atributos de la instancia
+self ==> referencia a la instancia que esta siendo creada
+
+class attributes:
+Is an attribute of the class. It belongs to the class, not to a particular instance.
+Any change of any class attributes affects all instances.
+
+
+TODO: Lección número 48
+
+
 
 
