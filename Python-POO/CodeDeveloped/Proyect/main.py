@@ -51,7 +51,7 @@ my_rectangle = Rectangle(5, 4)
 print(my_rectangle)
 
 class Dog:
-    
+
     def __init__(self, name, age, color, is_male):
         self.name = name
         self.age = age
@@ -61,3 +61,4 @@ class Dog:
 
 my_dog = Dog('Pepe', 2, 'black', True)
 print(my_dog)
+
