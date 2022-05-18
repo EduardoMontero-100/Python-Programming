@@ -1,4 +1,4 @@
-from numpy import mat
+from numpy import conj, mat
 
 
 cuenta = (8*5+4)/5
@@ -445,3 +445,213 @@ if sum(pares) > sum(impares):
     print('Lista de pares es mayor a la de impares')
 else:
     print('Lista de impares es mayor a la de pares')
+
+    ## los conjuntos o sets son una bolsa
+    # no tienen un orden
+    # los conjuntos no tienen duplicados
+    # los conjuntos no se indexan
+    # 
+    conjunto1 ={1,2,3,4, 'Edu', 'Edu', (1,2), (1,2)}
+    print(conjunto1)
+
+    #conjunto vacio; heterogeno ==> acepta diferentes tipos de datos pero que sean inmutables
+    # No acepta otros conjuntos
+    conjunto2=set()
+    print(conjunto2)
+
+    conjunto1 ={1,2,3,4, 'Edu', 'Edu', (1,2), (1,2), [12,3,4]}
+    conjunto1 ={1,2,3,4, 'Edu', 'Edu', (1,2), (1,2), conjunto2}
+    # no acepta otros conjuntos, ni listas, ni diccionarios como dato
+
+
+    lista =[1,2,3,2,3,4,3,4,2,5]
+    conjunto = set(lista)
+    # crea un conjunto con los numeros no repetidos
+    type(conjunto)
+    print(conjunto)
+    print(lista)
+
+    #elimino los duplicados de una lista
+    lista_no_duplicados = list(set(lista))
+    print(lista)
+    print(lista_no_duplicados)
+
+
+    conjunto3 = set('hola mundo')
+    print(conjunto3)
+
+    conjunto4 = set(range(10))
+    print(conjunto4)
+
+    #Funciones del tipo de dato set
+    #add agrega elementos a la lista
+    conjunto1.add('Jose')
+    print(conjunto1)
+
+    conjunto1.add('Jose')
+    print(conjunto1)
+
+    #agregar varios elementos
+    elementos = ['HOLAAA', 2,3,4,4]
+    conjunto1.update(elementos) #acepta listas y cadenas
+    print(conjunto1)
+
+    elementos2 =[223,3,3,4,4,'pepe']
+    for elemento in elementos2:
+        conjunto1.add(elemento)
+
+    print(conjunto1)
+
+
+    conjunto1={1,2,3,5}
+    conjunto1.update(range(11))
+    print(conjunto1)
+    
+
+    #len()
+    print(len(conjunto1))
+
+    #discar() quita el elemento del conjunto
+    conjunto1.discard(3)
+    print(conjunto1)
+
+    #remove falla si no puede eliminar el elemento
+    conjunto1.remove(3)
+    print(conjunto1)
+
+    # in (para saber si un elemento está o no en un conjunto)
+    print(3 in conjunto1)
+    print(8 in conjunto1)
+
+    print(conjunto1)
+
+    eliminado = conjunto1.pop() #elimina aleatoriamente
+    print(conjunto1)
+    print(eliminado)
+
+    #Elimina todo el contenido de un conjunto
+    conjunto1.clear()
+    print(conjunto1)
+
+
+
+    usuarios = {"Miguel", "Blanca", "Mario", "Andrés"} 
+    add_usuarios = ['Ana', 'Ramon', 'Marta', 'Eric', 'David']
+    delete_usuarios =['Mario', 'Miguel', 'Esteban']
+    print('Conjunto de usuarios inicial:')
+    print(usuarios)
+
+    usuarios.update(add_usuarios)
+    print('Conjunto de usuarios update:')
+    print(usuarios)
+
+    print('Conjunto de usuarios delete:')
+    for usuario in delete_usuarios:
+        usuarios.discard(usuario)
+
+    print(usuarios)
+
+
+#Diccionario (coleccion no ordenada de objetos):
+# Conjuntos clave:valor
+diccionario1={'Nombre':'Eduardo', 
+              'Edad':33,
+              'notas':[10,10,9,10],
+              'Apodo': 'Eduardo',
+              0:'es un cero'
+              }
+print(diccionario1['Nombre'])
+print(diccionario1['notas'])
+print(diccionario1[0])
+
+# similar al dataframe
+type(diccionario1)
+diccionario1['Edad']='Eduardo'
+print(diccionario1)
+diccionario1['Otro Apodo'] ='Lalo'
+print(diccionario1)
+diccionario1[' '] ='Otra cosa'
+print(diccionario1)
+
+
+diccionario2 = {}
+diccionario2['clave']='valor'
+diccionario2['otra']=12234
+
+print(diccionario2)
+
+diccionario2.update({'Altura':1.86, 'Peso':78})
+print(diccionario2)
+
+#####################################################
+#####################################################
+print(len(diccionario2))
+
+## eliminar elemento de un diccionario
+del diccionario2['Altura'] #elimina de una en una
+print(diccionario2)
+
+#######################################################
+### in 
+#######################################################
+
+'clave' in diccionario2 # busca la clave
+
+diccionario2['otra']=12234
+print(diccionario2)
+valor_borrado = diccionario2.pop('otra')
+print(diccionario2)
+print(valor_borrado)
+
+
+
+diccionario3 = {'primero':3, 'segundo':45}
+diccionario3['primero']+=8
+print(diccionario3)
+
+
+
+diccionario4 = {'Curso': 'Python', 'Comision':3760, 'Aprobados':'todos'}
+
+for elemento in diccionario4: #devuelve las claves no el valor
+    print(f'{elemento}:')
+    print(f'{diccionario4[elemento]}')
+
+
+llaves = diccionario4.keys() #devuelve una lista de llaves
+values = diccionario4.values() #devuelve una lista de valores
+
+print(llaves)
+print(values)
+
+for valor in diccionario4.values():
+    print(f'Valor: {valor}')
+
+
+
+for llave in diccionario4.keys():
+    print(f'Clave: {llave}')
+
+diccionario4.items() #lista de tuplas
+
+for elemento in diccionario4.items():
+    print(elemento)
+
+
+for clave, valor in diccionario4.items():
+    print(f'Clave: {clave}; Valor {valor}')
+
+diccionario4.items()
+
+
+lista = ['Eduardo', 'Montero', 'Bermudez']
+for ubicacion, elemento in enumerate(lista):
+    print(ubicacion)
+    print(elemento)
+
+############
+# Desafio
+############
+
+animales ={'elefante':''}
+update_animales ={'perro':'Bobby', 'tigre':'Peepe', 'mono':'homero'}
