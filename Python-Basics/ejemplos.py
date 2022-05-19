@@ -654,4 +654,10 @@ for ubicacion, elemento in enumerate(lista):
 ############
 
 animales ={'elefante':''}
-update_animales ={'perro':'Bobby', 'tigre':'Peepe', 'mono':'homero'}
+otra_lista ={'perro':'Bobby', 'tigre':'Peepe', 'mono':'homero'}
+animales.update(otra_lista)
+print(animales)
+
+animales['elefante']='Trompis'
+animales['delfin'] ='Manolo'
+print(animales)

@@ -83,8 +83,82 @@ class attributes:
 Is an attribute of the class. It belongs to the class, not to a particular instance.
 Any change of any class attributes affects all instances.
 
+#######################
+### Abstraction
+#######################
+Hide the complexity from the user.
+Allow us to abstract out common parts of the code to avoid repetition. (Reusable)
+We can avoid code repetition
 
-TODO: Lección número 48
+Class: 
+ - Interface : External(steering wheel)
+ - Implementacion: Internal (engineen)
+
+
+#######################
+### Encapsulation
+#######################
+Bundling of data and methods that act on that data into a single unit (class)
+Objective: Prevent direct access to the attributes in order to avoid making
+potentially problematic changes to the state
+Public or not public (getters + setter)
+
+Attributes :
+    Public: An attribute that can be accessed and modified 
+    directly without access restrictions
+    
+    Non Public: Naming
+        By Convention: _<attribute>
+
+        Changing Name: __<attribute> (only for special conventions): Naming mangling
+        The term private is not used because there is not really a private attribute in Python
+
+    (No attribute is ever really private in Python. They can still be accessed outside of the class, 
+    but according to the conventions, you shouldn't.)
+
+    --===================================================================--
+    Name Mangling: Process by which the name of the attribute is modified
+    --===================================================================--
+    __spam              ==> _ClassName__spam
+    __engine_serial_num ==> _Car__engine_serial_num
+
+    It should be used only for special cases
+
+############################################################
+## Getters and Setters and Properties
+############################################################
+Methods are like functions associated to a specific object or class
+Getters and setters are methods that let us get and set the value of
+an instance attribute.
+
+Getters: Get the value of an instance attribute
+Setters: Set the value of an instance attribute. We can use it to validate the new value
+
+get_+<attribute>
+get_name; get_color, etc.
+
+<object>.get_<attribute>()
+
+set_+<attribute>
+set_name; set_color, etc.
+
+<object>.set_<attribute>()
+
+########################################################################
+## Properties is a better way to set and get values to a class
+########################################################################
+
+property(<getter>, <setter>)
+The getters and the setters will be called behind the scenes for their
+corresponding operation
+
+########################
+TODO:
+Section 7. 70
+########################
+
+
+
 
 
 
