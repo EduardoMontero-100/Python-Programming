@@ -661,3 +661,227 @@ print(animales)
 animales['elefante']='Trompis'
 animales['delfin'] ='Manolo'
 print(animales)
+
+
+####################################
+## Metodos de colecciones
+####################################
+
+cadena1 = "Python en coder"
+cadena_mayus = cadena1.upper()
+print(cadena_mayus)
+print(cadena1)
+
+cadena1 = "Python en coder"
+cadena1 = cadena1.lower()
+print(cadena1)
+
+cadena2 = "SoMos la comIsiOn 27620"
+cadena2=cadena2.capitalize()
+print(cadena2)
+
+cadena3 = "SoMos la comIsiOn 27620"
+cadena3=cadena3.title()
+print(cadena3)
+
+print(cadena3.count('7')) # cuenta cuantos 7 hay
+print(cadena3.count('o')) # cuenta cuantos o hay
+print(cadena3.count('om')) # cuenta cuantos om hay
+
+print(cadena3.find('o')) # el indice de la primera aparición del caracter buscado
+                          # del primer caracter de la cadena buscada
+# -1 del find significa que no encontró
+
+print(cadena3.rfind('o')) # muestra el indice de la ultima aparición de la cadena
+
+cadena4 = "muchos Aires pocos Aires Buenos Aires"
+lista = cadena4.split('Aires')
+lista
+
+cadena4 = 'hola como estas soy edu y soy el profe de python en esta comision 37360'
+lista = cadena4.split(' ')#corta por palabra
+lista
+
+cadena4 = 'hola como estas soy edu y soy el profe de python en esta comision 37360'
+lista = cadena4.split()
+lista #corta por palabra
+
+cadena1 = 'Eduardo'
+",".join(cadena1) # a cada caracter le añade ,
+#"separador".join('cadena')
+
+cadena = 'El mejor profe es Juan'
+print(cadena.replace('Juan', 'Edu'))
+
+
+cadena = '----El mejor profe es Juan----'    
+print(len(cadena))
+print(len(cadena.strip('-')))
+print(cadena.strip('-')) # por defecto usa el espacio
+
+#Otras funciones super útiles:
+
+#isdigit()
+#isalnum
+#isalfa
+#islower
+#isupper
+#istitle
+#isspace
+#startswith()
+#endswith()
+
+#########
+# listas
+#########
+
+lista = [1,2,34,3,2]
+lista.clear()
+lista
+
+lista = [1,2,34,3,2]
+lista =[]
+lista
+
+lista = [1,2,34,3,2]
+lista2 = [1,2,3,4,3,5]
+lista3 = lista+lista2
+lista3
+
+
+lista = [1,2,34,3,2]
+lista2 = [1,2,3,4,3,5]
+print(lista)
+lista.extend(lista2) # la asigna en la misma lista
+print(lista)
+
+lista = [1,2,34,3,2]
+lista.insert(2,'Nuevo')
+lista
+
+lista = [1,2,34,3,2]
+lista.insert(4,(1,2,3,2)) # inserta un elemento en la posición especificada
+lista
+lista.reverse()
+
+
+lista = [1,2,4,3,2,5,34,3]
+lista.sort()
+print(lista)
+lista.sort(reverse = True)
+print(lista)
+
+
+cadena = 'gordon lanzó su curva&strawberry ha fallado por un pie! -gritó Joe Castiglione&dos pies -le corrigió Troop&strawberry menea la cabeza como disgustado… -agrega el comentarista'
+
+lista = cadena.split('&')
+
+cadena_final = ''
+for indice, cadena in enumerate(lista):
+    if indice >0:
+        #print('- '+cadena.capitalize())
+        cadena_final = cadena_final+'- '+cadena.capitalize()+'.'+'\n'
+    else:
+        #print(cadena.capitalize()+'...')
+        cadena_final = cadena_final+cadena.capitalize()+'...'+'\n'
+
+cadena_final = cadena_final.replace('joe', 'Joe').replace('castiglione', 'Castiglione')
+print(cadena_final)
+
+#########################
+#Sets o Conjuntos
+########################
+
+conj1 = {1,2,4, 'Fran'}
+conj2 = {6, 'Pepe'}
+conj3 = {1,2,4,'Fran', 8,11}
+
+#conj4 = conj1 # asi es copia por referencia
+conj4 = conj1.copy() # asi es copia por valor
+print(conj4)
+
+conj1.isdisjoint(conj3) # False si comparten elementos
+conj1.isdisjoint(conj2) # True si no comparten elementos
+
+conj1.issubset(conj3)
+conj1.issubset(conj2)
+
+conj3.issuperset(conj1)
+
+conj4 = conj1.union(conj3)
+print(conj4) # los elementos juntos sin repetir
+
+conj4 = conj3.difference(conj1)
+print(conj4) #lo que esta en uno que no esta en otro
+
+
+
+conj1 = {1,2,4, 'Fran'}
+conj2 = {6, 'Pepe'}
+conj3 = {1,2,4,'Fran', 8,11}
+conj3.difference_update(conj1)
+print(conj3)
+
+set1 = {1,2,3,7}
+set2 = {3,4,5}
+
+set1.intersection_update(set2)
+print(set1)
+
+#####################################
+## Diccionarios
+#####################################
+
+diccionario ={'Nombre':'Eduardo',
+              'Edad':36,
+              'Altura':1.86
+}
+
+print(diccionario.get('Apellido', -9999))
+print(diccionario.get('Edad', -9999)) # se usa para que no pinche si no encuentra la clave
+
+diccionario.keys() # lista de las claves
+diccionario.values() # lista de los valores
+diccionario.items() # Tupla de clave valor
+
+for clave, valor in diccionario.items():
+    print(f'la clave es: {clave} y el valor es {valor}')
+
+
+# Desafio:
+lista = [29, -5, -12, 17, 5, 24, 5, 12, 23, 16, 12, 5, -12, 17]
+#1. Borrar los elementos duplicado
+lista_new = list(set(lista))
+#2. Ordenar la lista de mayor a menor
+lista_new.sort(reverse = True)
+#3. Eliminar todos los numeros impares
+lista_pares=[]
+for elemento in lista_new:
+    if elemento%2==0:
+        lista_pares.append(elemento)
+#4. Sumar todos los elmentos de la lista
+sum(lista_pares)
+#5. Añadir como primer elemento de la lista la suma realizada 
+lista_pares.insert(0, sum(lista_pares))
+#6. Devolver la lista modificada
+print(lista_pares)
+#7. Finalmente, después de ejecutar la función, comprueba que la suma de todos 
+#   los números a partir del segundo, concuerda con el primer número de la lista
+if lista_pares[0] == sum(lista_pares[1:]):
+    print('Operación de suma correcta.')
+else:
+    print('Operación de suma equivocada.')
+
+
+
+
+lista =['Hola', 'Eduardo', 'Montero']
+','.join(lista)
+
+################################
+## Manejo de archivos y datos
+################################
+## Datos Persistentes:
+    # Archivos
+    # Datos
+

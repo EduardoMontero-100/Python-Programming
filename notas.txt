@@ -151,11 +151,24 @@ set_name; set_color, etc.
 property(<getter>, <setter>)
 The getters and the setters will be called behind the scenes for their
 corresponding operation
+########################################################################
+##@property
+########################################################################
 
-########################
+Decorator: A function that takes a function and extends its behavior
+without explicitly modifying it.
+
+We will reuse the name of the property.
+########################################################################
+
+@property
+def property_name(self):
+    return self._property_name
+
+
 TODO:
-Section 7. 70
-########################
+Section 8. 78
+########################################################################
 
 
 
