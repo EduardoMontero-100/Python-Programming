@@ -165,9 +165,30 @@ We will reuse the name of the property.
 def property_name(self):
     return self._property_name
 
+###########################################################################
+## Methods in python
+Methods define the actions that the objects can make
+
+Instance Methods belongs to a specific object. 
+(self==> refers to the instance that is calling the methods)
+calling a methods ==> calling a function
+
+Method names usually include verbs
+Follow snake case ==> method_name
+
+## Default arguments in methods have to be at the end of the list
+Don’t use spaces around the = sign when used to indicate a keyword argument, 
+or when used to indicate a default value for an unannotated function parameter
+
+Methods Chaining:
+    pizza.add_topping("mushrooms") \
+        .add_topping("olives") \
+        .add_topping("chicken") \
+        .display_toppings()
+###########################################################################
 
 TODO:
-Section 8. 78
+Section 9. 95 
 ########################################################################
 
 
