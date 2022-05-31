@@ -188,10 +188,12 @@ Methods Chaining:
 ###########################################################################
 
 TODO:
-Section 9. 99 
+- Sección 9: Revisar todas las clases implementadas y entender el programa de punta a punta
+- Lección 109
 ########################################################################
 
-
+Objects in memory
+In Python, everything is an object
 
 
 

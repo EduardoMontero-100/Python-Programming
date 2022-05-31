@@ -885,3 +885,64 @@ lista =['Hola', 'Eduardo', 'Montero']
     # Archivos
     # Datos
 
+################################
+## Funciones
+################################
+# Son subprogramas
+def saludar(nombre: str): #parametro
+    print(f'Hola {nombre} ¿cómo estás?')
+
+nombre = input('Ingrese su nombre')
+saludar(nombre) #argumento
+
+
+def sumar(x: int,y: int ):
+    print(f'El resultado de la suma es {x + y}') 
+
+def restar(x: int,y: int ):
+    print(f'El resultado de la resta es {x - y}')
+
+sumar(10,30)
+sumar(40,80)
+
+restar(10,30)
+restar(40,80)
+
+variable_test = 10
+def test():
+    print(variable_test)
+test()
+
+#Crear una función que me avise si el usuario es mayor de edad, la misma recibe como parametro
+# la edad del usuario
+
+def is_greater_age(age, name):
+    if age >= 18:
+        print(f'{name} es mayor de edad')
+    else:
+        print(f'{name} es menor de edad')
+
+is_greater_age(17, 'Pepe')
+is_greater_age(18, 'Laura')
+is_greater_age(19, 'Jose')
+
+# null en python es igual a none
+
+def calcular_iva(precio):
+    iva = precio * 0.21
+    precio_iva = precio * 1.21
+    return [iva, precio_iva]
+
+
+precio_producto = 1000
+nombre_producto = 'Lampara'
+
+print(f'Nombre Producto: {nombre_producto}')
+print(f'Precio Producto: {precio_producto}')
+iva = calcular_iva(precio_producto)[0]
+precio_iva = calcular_iva(precio_producto)[1]
+print(f'Iva: {iva}')
+print(f'Precio + Iva: {precio_iva}')
+print(type(calcular_iva(precio_producto)))
+
+# la función puede devolver cualquier tipo de dato, int, float, str, list, tuple
