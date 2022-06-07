@@ -1,3 +1,5 @@
+from ensurepip import version
+from pyexpat import version_info
 from numpy import conj, mat
 
 
@@ -946,3 +948,176 @@ print(f'Precio + Iva: {precio_iva}')
 print(type(calcular_iva(precio_producto)))
 
 # la función puede devolver cualquier tipo de dato, int, float, str, list, tuple
+
+# Excepciones
+# 1) Error semantico
+lista = [1,2,3,4,5]
+while len(lista)>0:
+    lista.pop()
+# 2) Error sintactico
+################################
+
+# Excepciones durante la ejecución try/except
+def dividir(x, y):
+    try:
+        return x/y
+    except:
+        print('Hubo un error en la operacion.')
+        return None
+
+# Excepciones: Especifico un tipo de error para que sea capturado por las except
+def dividir(x, y):
+    try:
+        return x/y
+    except(ZeroDivisionError):
+        print('Hubo un error de división por 0.')
+        return None
+    except(TypeError):
+        print('Error en el tipo de dato')
+
+dividir(5,[4,5])
+
+def prueba(x , y):
+    while(True):
+        try:
+            print('Operacion realizada correctamente')
+            return x/y
+        except:
+            print('No puedo convertir eso')
+            break
+        finally:
+            print('Gracias')
+prueba(5,'aaa')
+
+
+
+def prueba(x , y):
+    try:
+        print('Operacion realizada correctamente')
+        return x/y
+    except Exception as error: 
+        print(f'No puedo convertir eso. Tipo del error: {error}')
+        print (type(error).__name__)
+    finally:
+        print('Gracias')
+
+
+prueba(5,'')
+
+
+
+def dividir(x, y):
+    try:
+        return x/y
+    except Exception as error:
+        print(f'Obtuvo el siguiente error {type(error).__name__}')
+        return None
+
+
+def dividir(x, y):
+    try:
+        return x/y
+    except (ZeroDivisionError):
+        print('Error de division para zero')
+    except (TypeError):
+        print('Error en el tipo de dato')
+
+dividir(10, [2,3,2,3])
+dividir(10, '')
+dividir(10, 0)
+
+
+lista=[1,3,9] 
+
+
+while len(lista)>0:
+    try:
+        lista.pop()
+    except:
+        print('Error')
+
+# Challenges
+#1) Realiza una función llamada area_rectangulo() que devuelva el área del rectángulo a partir de una base y una altura. Calcula el área de un rectángulo de 15 de base y 10 de altura
+
+def area_rectangulo(base, altura):
+    if (isinstance(base, int) or isinstance(base, float)) and (isinstance(altura, int) or isinstance(altura, float)) :
+        return base * altura
+    else:
+        print('Por favor, ingrese el los tipos de datos correctos')
+        return None
+print(area_rectangulo(15,10))
+
+#2) Realiza una función llamada area_circulo() que devuelva el área de un círculo a partir de un radio. Calcula el área de un círculo de 5 de radio
+def area_circulo(radio):
+    import math
+    if isinstance(radio, int) or isinstance(radio, float):
+        return radio * math.pi
+    else:
+        print('Por favor, ingrese el los tipos de datos correctos')
+        return None
+
+print(area_circulo(5))
+
+#3) Realiza una función llamada relacion() que a partir de dos números cumpla lo siguiente:
+def relacion(x, y):
+    if x > y:
+        return 1
+    elif x < y:
+        return -1
+    else:
+        return 0
+
+print(relacion(5,10))
+print(relacion(10,5))
+print(relacion(5,5))
+
+#4) Realiza una función llamada intermedio() que a partir de dos números, devuelva su punto intermedio
+def intermedio(x, y):
+    if (isinstance(x, int) or isinstance(x, float)) and (isinstance(y, int) or isinstance(y, float)) :
+        return (x+y)/2
+    else:
+        print('Por favor, ingrese el los tipos de datos correctos')
+        return None
+
+
+print(intermedio(-12, 24))
+
+#5) Realizá una función llamada recortar() que reciba tres parámetros. El primero es el número a recortar, el segundo es el límite inferior y el tercero el límite superior. La función tendrá que cumplir lo siguiente:
+
+    #1. Devolver el límite inferior si el número es menor que éste
+    #2. Devolver el límite superior si el número es mayor que éste.
+    #3. Devolver el número sin cambios si no se supera ningún límite.
+#Comprueba el resultado de recortar 15 entre los límites 0 y 10
+
+def recortar(n, limite_inferior, limite_superior):
+    if n < limite_inferior:
+        print(f'El número {n} es menor al límite inferior {limite_inferior}')
+        return limite_inferior
+    elif n > limite_superior:
+        print(f'El número {n} es mayor al límite superior {limite_superior}')
+        return limite_superior
+    else:
+        print(f'El número no tuvo cambios.')
+        return n
+        
+print(recortar(15, 0, 10))
+
+
+#6) Realiza una función separar() que tome una lista de números enteros y devuelva dos listas ordenadas. La primera con los números pares, y la segunda con los números impares:
+
+def separar(lista):
+    lista_pares = []
+    lista_impares =[]
+    for elemento in lista:
+        if elemento % 2 == 0:
+            lista_pares.append(elemento)
+        else:
+            lista_impares.append(elemento)
+        lista_pares.sort()
+        lista_impares.sort()
+    return lista_pares, lista_impares  
+
+pares,impares = separar([6,5,2,1,7])
+print(pares)
+print(impares)
+
