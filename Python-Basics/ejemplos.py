@@ -1121,3 +1121,26 @@ pares,impares = separar([6,5,2,1,7])
 print(pares)
 print(impares)
 
+
+
+### Ejemplos de DocString ####
+def area_rectangulo(base:int, altura:int):
+    """Función que calcula el área un rectángulo
+    
+    Input
+    -----
+    base:int base del rectangulo
+    altura:int altura del rectangulo
+
+    Output
+    ------
+    area = base * altura
+    """
+
+    return base * altura
+
+print(area_rectangulo(5,4))
+print(area_rectangulo.__doc__)
+
+
+# Diagramas de clases
