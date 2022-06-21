@@ -1144,3 +1144,12 @@ print(area_rectangulo.__doc__)
 
 
 # Diagramas de clases
+# Ambientes virtuales:
+""" 
+mkdir virtualenv
+virtualenv cluster1 -p python
+source cluster1/bin/activate 
+pip list
+cd
+source virtualenv/cluster1/bin/activate
+"""
